@@ -1,4 +1,5 @@
 class TeachMeTypeScript {
+
     public static arrow(): number {
         console.log("**** TeachMeTypeScript.arrow...");
         const evens = [2,4,6,8,10,20]
@@ -162,6 +163,35 @@ class TeachMeTypeScript {
         
         let mySquare = createSquare({color: "black"});
         console.log(mySquare);
+        
+        
+    }
+    static letConstVar(): any {
+        //avoid mutable state by using const instead of var
+        //const is another way of defining block scope var, unassignable
+        // var message = 'Hello World !';
+        const message = 'Hello World !';
+
+        //only reference to object is immutable. can still update property of object
+        const car = {
+            make: 'Nissan'
+        }
+
+        car.make = 'Honda';
+        console.log(car);
+        
+        let i:number = 5;
+        if (message) {
+            //var is not blocked scope and is available outside block
+            // var i:number;
+            let i:number;
+            for (i=0; i<3; i++) {
+                console.log(message + ' ' + i)
+            }
+        }
+        console.log('Value of i = ' + i);
+
+        
     }
 }
 
@@ -173,5 +203,8 @@ TeachMeTypeScript.enumString();
 TeachMeTypeScript.typeAssertion();
 TeachMeTypeScript.interface();
 TeachMeTypeScript.interfaceOptionalProperties();
+TeachMeTypeScript.letConstVar();
+
+
 
 
